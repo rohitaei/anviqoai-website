@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ANVIQO — Interactive ANVI</title>
+<style>
+:root{--bg:#03090f;--p:#091721;--t:#effaff;--m:#91a9b6;--c:#55e8ff;--g:#6dffb0;--r:#ff6878;--l:#ffffff18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 78% -10%,#164b64,transparent 34%),#03090f;color:var(--t);font-family:Inter,system-ui,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}nav{position:fixed;z-index:5;top:0;left:0;right:0;background:#03090fcc;backdrop-filter:blur(18px);border-bottom:1px solid var(--l)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:950;letter-spacing:.13em;font-size:21px}.logo i{color:var(--c);font-style:normal}.links{display:flex;gap:23px;color:#a9c0cb;font-size:14px}.btn{border:1px solid #55e8ff66;background:#55e8ff14;border-radius:12px;padding:11px 17px;font-weight:850;cursor:pointer;color:white}
+.hero{padding:145px 0 65px}.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.ey{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--c);font-weight:900}
+h1{font-size:clamp(52px,8vw,94px);line-height:.9;letter-spacing:-.065em;margin:18px 0 24px}.grad{background:linear-gradient(100deg,#fff,var(--c),var(--g));background-clip:text;color:transparent}.lead{font-size:19px;line-height:1.65;color:#adc3cf}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:23px}.chip{font-size:12px;padding:7px 10px;border:1px solid var(--l);border-radius:999px;color:#a9c0ca}
+.chat{border:1px solid #55e8ff3d;border-radius:24px;background:linear-gradient(145deg,#0d2330,#07121a);box-shadow:0 35px 100px #0009;overflow:hidden}.chatTop{padding:14px 17px;border-bottom:1px solid var(--l);display:flex;justify-content:space-between;font-size:12px}.online{color:var(--g)}
+.chatBody{padding:18px;min-height:465px;display:flex;flex-direction:column}.msg{max-width:88%;padding:13px 15px;border-radius:16px;margin:7px 0;font-size:14px}.anviMsg{background:#55e8ff0d;border:1px solid #55e8ff25;align-self:flex-start}.userMsg{background:#ffffff08;border:1px solid var(--l);align-self:flex-end}.diagnosis{padding:14px;border-radius:15px;border:1px solid #ff68783b;background:#ff68780b;margin:7px 0}.quick{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:12px}.quick button,.tagBtn{border:1px solid var(--l);background:#ffffff05;color:#c5d6dd;border-radius:9px;padding:9px;cursor:pointer}.askbar{display:flex;gap:8px;margin-top:9px}.askbar input{flex:1;background:#061018;color:white;border:1px solid var(--l);border-radius:10px;padding:12px}.askbar button{border:1px solid #55e8ff66;background:#55e8ff12;color:white;border-radius:10px;padding:0 15px;font-weight:800}
+section{padding:90px 0}.head{max-width:730px;margin-bottom:35px}.head h2{font-size:clamp(34px,5vw,58px);line-height:1;margin:11px 0}.head p{font-size:17px;color:var(--m)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{padding:25px;border:1px solid var(--l);border-radius:18px;background:#091721}.icon{font-size:25px;color:var(--c)}.card h3{margin:13px 0 7px}.card p{color:var(--m);margin:0}
+.instrument{display:grid;grid-template-columns:.7fr 1.3fr;gap:16px}.list,.detail{border:1px solid var(--l);border-radius:20px;background:#091721;padding:18px}.tagBtn{width:100%;text-align:left;margin:5px 0}.tagBtn.active{border-color:#55e8ff55;background:#55e8ff0d}.detailGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.box{padding:13px;border:1px solid var(--l);border-radius:12px}.box small{display:block;color:var(--m)}.box b{font-size:18px}.path{margin-top:15px;display:flex;gap:7px;flex-wrap:wrap}.path span{padding:9px 11px;border:1px solid #55e8ff30;border-radius:9px;background:#55e8ff08;font-size:12px;color:#c5e8ef}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.flow div{padding:20px 12px;text-align:center;border:1px solid var(--l);border-radius:15px}.flow b{display:block;color:var(--c);margin-bottom:5px}.flow span{font-size:12px;color:var(--m)}
+.field{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.phone{max-width:365px;margin:auto;padding:12px;border:1px solid #55e8ff45;border-radius:35px;background:#02080c}.screen{min-height:510px;padding:25px;border-radius:25px;background:linear-gradient(160deg,#0e2634,#061018)}.anvi{font-size:34px;font-weight:950;margin-top:22px}.bubble,.status{margin-top:24px;padding:17px;border-radius:17px;border:1px solid var(--l)}.status{border-color:#6dffb033;background:#6dffb009}
+.cta{padding:50px;border-radius:24px;border:1px solid #55e8ff40;background:#0a1924}.cta h2{font-size:42px;line-height:1;margin:9px 0}.cta p{color:var(--m)}footer{border-top:1px solid var(--l);padding:32px 0;color:#78919e;font-size:13px}
+@media(max-width:850px){.links{display:none}.heroGrid,.instrument,.field{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.hero{padding-top:120px}.detailGrid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<nav><div class="wrap nav"><a class="logo" href="#top">ANVI<i>QO</i></a><div class="links"><a href="#platform">Platform</a><a href="#talk">Talk to ANVI</a><a href="#tags">Instrument AI</a><a href="#field">ANVI Field</a></div><a class="btn" href="#talk">Try ANVI</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap heroGrid"><div>
+<div class="ey">Interactive industrial intelligence</div><h1><span class="grad">Think.<br>Predict.<br>Protect.</span></h1>
+<p class="lead"><b>Meet ANVI.</b> A 24/7 industrial AI assistant concept designed to turn instrument information and abnormal conditions into clear, structured assistance for engineers, operators and field teams.</p>
+<div class="chips"><span class="chip">Instrumentation</span><span class="chip">Diagnostics</span><span class="chip">24/7 Human Assist</span><span class="chip">Field Intelligence</span></div></div>
+<div class="chat" id="talk"><div class="chatTop"><span>ANVI / INTERACTIVE DEMO</span><span class="online">● DEMO ONLINE</span></div><div class="chatBody" id="chatBody">
+<div class="msg anviMsg"><b>ANVI</b><br>Hello. I'm Anvi. Ask me about a sample MBF-2 instrument, motor or valve.</div>
+<div class="msg userMsg">“PT_201B is showing HIGH. What should I check?”</div>
+<div class="diagnosis"><b style="color:var(--r)">⚠ CONDITION DETECTED</b><br><br><b>First checks:</b> verify local indication → check transmitter/impulse path → verify supply and loop signal → trace JB/TB/panel/I/O.<br><br><small style="color:var(--m)">Demonstration response only.</small></div>
+<div class="quick"><button onclick="ask('PT_201B')">PT_201B</button><button onclick="ask('FT_201B')">FT_201B</button><button onclick="ask('TC_73')">TC_73</button><button onclick="ask('BLOWER-1')">BLOWER-1</button><button onclick="ask('SV1')">SV1</button></div>
+<div class="askbar"><input id="question" placeholder="Ask ANVI something..."><button onclick="customAsk()">ASK</button></div>
+</div></div></div></header>
+
+<section id="platform"><div class="wrap"><div class="head"><div class="ey">ANVIQO platform</div><h2>One assistant. Multiple operational questions.</h2><p>Identify the condition, explain it, and guide the next engineering check.</p></div><div class="cards">
+<div class="card"><div class="icon">◈</div><h3>Observe</h3><p>Use authorized data and structured instrument information.</p></div>
+<div class="card"><div class="icon">◎</div><h3>Understand</h3><p>Connect tag, equipment context and configured operating information.</p></div>
+<div class="card"><div class="icon">⌁</div><h3>Diagnose</h3><p>Present possible causes and ordered checks.</p></div>
+<div class="card"><div class="icon">⌖</div><h3>Trace</h3><p>Show the engineering signal path from instrument through the control system.</p></div>
+<div class="card"><div class="icon">▣</div><h3>Assist</h3><p>Bring useful information to operators and technicians.</p></div>
+<div class="card"><div class="icon">◌</div><h3>Protect</h3><p>Safety-first assistance with controlled, authorized integration.</p></div>
+</div></div></section>
+
+<section id="tags"><div class="wrap"><div class="head"><div class="ey">MBF-2 instrument intelligence demo</div><h2>Ask about a tag. See what ANVI knows.</h2><p>Sample records below are presentation-only and do not represent live plant values.</p></div>
+<div class="instrument"><div class="list">
+<button class="tagBtn active" onclick="showTag('PT_201B',this)">PT_201B — Pressure</button>
+<button class="tagBtn" onclick="showTag('FT_201B',this)">FT_201B — Flow</button>
+<button class="tagBtn" onclick="showTag('TC_73',this)">TC_73 — Temperature</button>
+<button class="tagBtn" onclick="showTag('BLOWER-1',this)">BLOWER-1 — Motor</button>
+<button class="tagBtn" onclick="showTag('SV1',this)">SV1 — Shutoff Valve</button></div>
+<div class="detail"><div class="ey" id="tagType">PRESSURE TRANSMITTER</div><h2 id="tagName">PT_201B</h2><p id="tagDesc" style="color:var(--m)">Pressure transmitter — MBF-2 side</p>
+<div class="detailGrid"><div class="box"><small>Demo value</small><b id="tagValue">5.2 kg/cm²</b></div><div class="box"><small>Configured range</small><b id="tagRange">2–8</b></div><div class="box"><small>ANVI status</small><b id="tagStatus" style="color:var(--g)">NORMAL</b></div></div>
+<div class="path"><span>Instrument</span><span>→</span><span>JB</span><span>→</span><span>TB</span><span>→</span><span>Panel</span><span>→</span><span>I/O</span><span>→</span><span>DCS</span></div>
+<p id="tagAdvice" style="color:#bdd0d8">ANVI can use this record as the starting point for diagnostic reasoning.</p></div></div></div></section>
+
+<section><div class="wrap"><div class="head"><div class="ey">How ANVI thinks</div><h2>Observe → Think → Predict → Assist → Protect.</h2></div><div class="flow"><div><b>OBSERVE</b><span>Data & status</span></div><div><b>THINK</b><span>Context</span></div><div><b>PREDICT</b><span>Early warning</span></div><div><b>ASSIST</b><span>Next checks</span></div><div><b>PROTECT</b><span>Safety first</span></div></div></div></section>
+
+<section id="field"><div class="wrap field"><div><div class="ey">ANVI Field</div><div class="head"><h2>Industrial intelligence in the hands of the people doing the work.</h2><p>Future mobile capability: scan a tag, ask by voice, retrieve approved information, and follow structured troubleshooting.</p></div><p>✓ QR/tag identification</p><p>✓ Voice and text questions</p><p>✓ Signal-path guidance</p><p>✓ Approved spare and maintenance information</p></div>
+<div class="phone"><div class="screen"><div class="ey">ANVI FIELD</div><div class="anvi">Hello, I'm Anvi.</div><div style="color:var(--m)">Your field intelligence assistant.</div><div class="bubble"><b>You</b><br><br>“PT_201B is showing zero. What should I check?”</div><div class="status"><b style="color:var(--g)">● DIAGNOSTIC READY</b><br><br>Verify local indication → transmitter supply → loop current → JB/TB/panel → AI channel.</div></div></div></div></section>
+
+<section><div class="wrap"><div class="cta"><div><div class="ey">The journey starts with MBF-2</div><h2>Built for the plant.<br>Designed for the field.</h2><p>ANVIQO starts as a controlled proof of concept. Live PLC/DCS/SCADA integration should only be added through authorized OT/IT architecture, cybersecurity review and testing.</p></div><a class="btn" href="#talk">Talk to ANVI →</a></div></div></section>
+<footer><div class="wrap">© 2026 ANVIQO — Think. Predict. Protect. <span style="float:right">ANVI • 24/7 Human Assist</span></div></footer>
+
+<script>
+const tags={
+PT_201B:{type:"PRESSURE TRANSMITTER",desc:"Pressure transmitter — MBF-2 side",value:"5.2 kg/cm²",range:"2–8",advice:"Normal in this demonstration. If high, low or unstable, ANVI can guide checks from process condition through transmitter and signal path."},
+FT_201B:{type:"FLOW TRANSMITTER",desc:"Flow transmitter — MBF-2 side",value:"420 Nm³/hr",range:"100–800",advice:"For an abnormal flow reading, compare process indication, inspect the sensing path and verify transmitter signal stability."},
+TC_73:{type:"THERMOCOUPLE",desc:"Temperature channel — MBF-2",value:"846 °C",range:"500–1000",advice:"For a temperature fault, check local reference, thermocouple continuity/polarity, extension wiring and input channel."},
+"BLOWER-1":{type:"MOTOR STATUS",desc:"Blower-1 running/status",value:"RUNNING",range:"RUNNING",advice:"For an unexpected stop, ANVI can guide checks for command, power, interlock, overload and feedback."},
+SV1:{type:"SHUTOFF VALVE",desc:"Solenoid/shutoff valve status",value:"OPEN",range:"OPEN",advice:"For a position mismatch, check command, solenoid/actuator operation and open/closed feedback."}
+};
+function showTag(k,el){let d=tags[k];document.querySelectorAll('.tagBtn').forEach(x=>x.classList.remove('active'));el.classList.add('active');tagType.textContent=d.type;tagName.textContent=k;tagDesc.textContent=d.desc;tagValue.textContent=d.value;tagRange.textContent=d.range;tagAdvice.textContent=d.advice}
+function ask(k){let d=tags[k],body=document.getElementById('chatBody'),u=document.createElement('div'),a=document.createElement('div');u.className='msg userMsg';u.textContent='“ANVI, check '+k+'.”';a.className='diagnosis';a.innerHTML='<b style="color:var(--c)">ANVI ANALYSIS</b><br><br><b>'+d.type+'</b> — '+d.value+'<br><br>'+d.advice+'<br><br><small style="color:var(--m)">Demonstration response only.</small>';body.insertBefore(u,body.querySelector('.quick'));body.insertBefore(a,body.querySelector('.quick'));body.scrollTop=body.scrollHeight}
+function customAsk(){let q=document.getElementById('question').value.trim();if(!q)return;let body=document.getElementById('chatBody'),u=document.createElement('div'),a=document.createElement('div');u.className='msg userMsg';u.textContent='“'+q+'”';a.className='msg anviMsg';a.innerHTML='<b>ANVI</b><br>I can demonstrate this workflow using the MBF-2 sample database. Try PT_201B, FT_201B, TC_73, BLOWER-1 or SV1.';body.insertBefore(u,body.querySelector('.quick'));body.insertBefore(a,body.querySelector('.quick'));document.getElementById('question').value='';body.scrollTop=body.scrollHeight}
+</script></body></html>
