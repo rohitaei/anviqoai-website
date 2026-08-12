@@ -1,42 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ANVIQO | Secure Login</title>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ANVIQO — Industrial Intelligence. Think. Predict. Protect.">
+<title>ANVIQO | Industrial Intelligence</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,#122c43,#06111d 65%);font-family:Arial,sans-serif;color:#dce8f2}
-.login{width:min(430px,92%);background:#0d1d30;border:1px solid #294761;border-radius:14px;padding:32px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.logo{color:#38d6e8;font-size:30px;font-weight:900;letter-spacing:2px}
-.tagline{margin-top:5px;color:#8095aa;font-size:11px;letter-spacing:1px}
-.title{margin-top:28px;font-size:21px;font-weight:800}
-.subtitle{margin-top:7px;color:#8095aa;font-size:11px;line-height:1.5}
-input{width:100%;margin-top:14px;padding:14px;border-radius:7px;border:1px solid #294761;background:#081624;color:#fff;outline:none;font-size:14px}
-button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:7px;background:#38d6e8;color:#06111d;font-weight:900;cursor:pointer}
-.security{margin-top:22px;padding:13px;background:#081624;border-left:3px solid #2bd47c;color:#8fa7bb;font-size:10px;line-height:1.8}
-.footer{margin-top:18px;text-align:center;color:#60788c;font-size:9px}
-</style>
-</head>
+:root{--bg:#050a12;--p:#0b1523;--p2:#0e1c2d;--line:#20384e;--txt:#edf7fb;--mut:#8ba2b6;--cyan:#35d9ea;--green:#39e58c;--amber:#f4c451;--red:#ff6262}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(900px 500px at 80% -5%,#12445a55,transparent 65%),radial-gradient(700px 500px at 0 20%,#14304d66,transparent 65%),var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:#050a12cc;backdrop-filter:blur(16px);border-bottom:1px solid #20384e99}.nav{height:70px;display:flex;align-items:center;gap:28px}.brand{font-size:24px;font-weight:950;letter-spacing:2px;color:var(--cyan)}.brand small{display:block;font-size:7px;letter-spacing:3px;color:#7992a8;margin-top:-3px}.links{display:flex;gap:23px;margin-left:auto;color:#9bb0c1;font-size:12px}.links a:hover{color:var(--cyan)}.login{padding:10px 17px;border:1px solid #35d9ea88;border-radius:8px;color:var(--cyan);font-weight:900;font-size:11px}
+.hero{padding:92px 0 72px}.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #23485c;background:#091725;border-radius:999px;color:#9dc2cf;font-size:9px;letter-spacing:1.5px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px #39e58c}h1{font-size:clamp(45px,7vw,82px);line-height:.97;letter-spacing:-4px;margin:25px 0 20px;max-width:950px}h1 span{color:var(--cyan)}.hero p{max-width:760px;color:var(--mut);font-size:18px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:14px 20px;border-radius:9px;font-size:12px;font-weight:900}.primary{background:var(--cyan);color:#031018}.secondary{border:1px solid #29485f;background:#0a1624}.preview{margin-top:55px;background:linear-gradient(145deg,#0d1d30,#07111c);border:1px solid #25445b;border-radius:16px;padding:20px;box-shadow:0 30px 80px #0009}.top{display:flex;justify-content:space-between;border-bottom:1px solid #1d3348;padding-bottom:12px;color:#7892a7;font-size:9px}.ready{color:var(--green)}.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:15px}.metric{background:#091625;border:1px solid #1b344a;border-radius:9px;padding:15px}.metric label{display:block;color:#7892a7;font-size:8px;font-weight:800}.metric b{display:block;font-size:20px;margin-top:7px}.urgent{color:var(--red)}.attn{color:var(--amber)}.cyan{color:var(--cyan)}.green{color:var(--green)}
+section{padding:78px 0}.kicker{color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:2px}h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin:9px 0 12px}.lead{max-width:720px;color:var(--mut)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.card{background:linear-gradient(145deg,#0d1c2d,#08131f);border:1px solid var(--line);border-radius:13px;padding:22px;min-height:175px}.ico{color:var(--cyan);font-size:20px}.card h3{font-size:15px;margin:13px 0 7px}.card p{color:var(--mut);font-size:11px}.identity{display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{background:#091522;border:1px solid var(--line);border-radius:14px;padding:24px}.tag{display:inline-block;background:#10283a;color:var(--cyan);padding:5px 8px;border-radius:5px;font:10px monospace}.tree{margin-top:15px;font:12px/2 ui-monospace,monospace;color:#a9bdca}.tree b{color:var(--cyan)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:30px}.step{background:#0a1625;border:1px solid var(--line);border-radius:10px;padding:17px 9px;text-align:center;color:#aebfcb;font-size:10px}.step b{display:block;color:var(--cyan);font-size:17px;margin-bottom:6px}.safety{margin-top:28px;background:#081a16;border:1px solid #20563f;border-radius:14px;padding:22px}.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.safe{padding:11px;border:1px solid #214b3a;border-radius:7px;color:#8fe4b5;font-size:10px}.vision{background:linear-gradient(135deg,#0a1e2e,#07111c);border:1px solid #24465d;border-radius:18px;padding:48px;text-align:center}.vision p{max-width:720px;margin:auto;color:var(--mut)}footer{border-top:1px solid var(--line);padding:28px 0;color:#698197;font-size:9px}.foot{display:flex;justify-content:space-between}
+@media(max-width:800px){.links{display:none}.dash,.cards,.identity{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.sgrid{grid-template-columns:1fr 1fr}h1{letter-spacing:-2px}}
+@media(max-width:520px){.dash,.cards,.identity,.sgrid,.flow{grid-template-columns:1fr}.hero{padding-top:60px}h1{font-size:48px}.hero p{font-size:15px}.vision{padding:30px 18px}.foot{display:block;line-height:2}}
+</style></head>
 <body>
-<div class="login">
-<div class="logo">ANVIQO</div>
-<div class="tagline">THINK • PREDICT • PROTECT</div>
-<div class="title">Secure Command Center</div>
-<div class="subtitle">Authorized access to ANVIQO industrial intelligence</div>
-<form action="https://anviqo.onrender.com/login" method="POST">
-<input name="username" type="text" placeholder="Username" autocomplete="username" required>
-<input name="password" type="password" placeholder="Password" autocomplete="current-password" required>
-<button type="submit">SIGN IN</button>
-</form>
-<div class="security">
-✓ READ-ONLY INTELLIGENCE<br>
-✓ PLC WRITE BLOCKED<br>
-✓ SCADA CONTROL BLOCKED<br>
-✓ HUMAN DECISION REQUIRED<br>
-✓ AUTOMATIC AUTHORIZATION DISABLED
-</div>
-<div class="footer">V5 FROZEN CORE • HUMAN DECISION REQUIRED</div>
-</div>
-</body>
-</html>
+<nav><div class="wrap nav"><a class="brand" href="#">ANVIQO<small>THINK • PREDICT • PROTECT</small></a><div class="links"><a href="#platform">Platform</a><a href="#intelligence">Intelligence</a><a href="#safety">Safety</a><a href="#vision">Vision</a></div><a class="login" href="https://anviqo.onrender.com/login">LOGIN</a></div></nav>
+<main>
+<section class="hero"><div class="wrap">
+<div class="pill"><i class="dot"></i> INDUSTRIAL INTELLIGENCE • V5 FROZEN CORE</div>
+<h1>See the plant.<br><span>Understand the risk.</span><br>Decide with evidence.</h1>
+<p>ANVIQO connects equipment, events, evidence and plant context into one intelligent decision-support layer for operations, instrumentation, maintenance and management.</p>
+<div class="buttons"><a class="btn primary" href="#platform">EXPLORE ANVIQO ↓</a><a class="btn secondary" href="https://anviqo.onrender.com/login">OPEN COMMAND CENTER →</a></div>
+<div class="preview"><div class="top"><span>ANVIQO / PLANT INTELLIGENCE</span><span class="ready">● SYSTEM READY</span></div><div class="dash">
+<div class="metric"><label>PLANT HEALTH</label><b class="attn">ATTENTION</b></div>
+<div class="metric"><label>TOP RISK</label><b class="urgent">CV-101 · 84.7</b></div>
+<div class="metric"><label>ACTIVE RISKS</label><b class="cyan">03</b></div>
+<div class="metric"><label>EVIDENCE CONFIDENCE</label><b class="green">88%</b></div>
+</div></div>
+</div></section>
+
+<section id="platform"><div class="wrap"><div class="kicker">THE PLATFORM</div><h2>One intelligence layer for the plant.</h2><p class="lead">ANVIQO turns plant signals into contextual intelligence using equipment identity, evidence, relationships and explainable reasoning.</p>
+<div class="cards">
+<div class="card"><div class="ico">◉</div><h3>Equipment Digital Identity</h3><p>Tag, area, service, PLC/DCS, I/O, range, manufacturer, criticality, maintenance, calibration and lifecycle context.</p></div>
+<div class="card"><div class="ico">◇</div><h3>Equipment Health & Risk</h3><p>Prioritize abnormal equipment and highlight where operational attention is most important.</p></div>
+<div class="card"><div class="ico">↗</div><h3>What Changed?</h3><p>Expose meaningful trend changes and abnormal signals without forcing teams through raw data.</p></div>
+<div class="card"><div class="ico">⌁</div><h3>Event Correlation</h3><p>Connect equipment relationships and developing event chains to build plant context.</p></div>
+<div class="card"><div class="ico">◆</div><h3>Evidence-backed Reasoning</h3><p>Present technical conclusions with evidence and confidence while avoiding unsupported causation claims.</p></div>
+<div class="card"><div class="ico">▣</div><h3>Management Intelligence</h3><p>Translate technical evidence into priorities, review decisions and concise management visibility.</p></div>
+</div></div></section>
+
+<section><div class="wrap identity"><div><div class="kicker">DIGITAL EQUIPMENT IDENTITY</div><h2>Every asset gets a place in the Plant Brain.</h2><p class="lead">A tag becomes a connected digital identity containing its technical, operational and maintenance context.</p></div><div class="box"><span class="tag">CV-101 • MBF</span><div class="tree"><b>CV-101</b><br>├── Area / Service<br>├── PLC / DCS / I/O<br>├── Instrument / Model / Range<br>├── Criticality / Risk<br>├── Maintenance history<br>├── Calibration history<br>├── Spare availability<br>├── Relationships<br>└── Evidence / Events / Health</div></div></div></section>
+
+<section id="intelligence"><div class="wrap"><div class="kicker">HOW ANVIQO THINKS</div><h2>From signal to decision.</h2><p class="lead">A structured intelligence path keeps technical reasoning connected to evidence and keeps people in control.</p><div class="flow"><div class="step"><b>01</b>Signals<br>Process & equipment data</div><div class="step"><b>02</b>Evidence<br>Changes & observations</div><div class="step"><b>03</b>Correlation<br>Events & relationships</div><div class="step"><b>04</b>Reasoning<br>Risk & confidence</div><div class="step"><b>05</b>Decision<br>Human authorization</div></div></div></section>
+
+<section id="safety"><div class="wrap"><div class="kicker">SAFETY BY DESIGN</div><h2>Intelligence without uncontrolled action.</h2><p class="lead">The current product boundary is deliberately read-only. ANVIQO supports people; it does not silently control the plant.</p><div class="safety"><div class="sgrid"><div class="safe">✓ READ-ONLY INTELLIGENCE</div><div class="safe">✓ PLC WRITE BLOCKED</div><div class="safe">✓ SCADA CONTROL BLOCKED</div><div class="safe">✓ HUMAN DECISION REQUIRED</div><div class="safe">✓ AUTOMATIC AUTHORIZATION DISABLED</div><div class="safe">✓ CAUSATION NOT CLAIMED</div></div></div></div></section>
+
+<section id="vision"><div class="wrap"><div class="vision"><div class="kicker">THE ANVIQO VISION</div><h2>From equipment intelligence to a Plant Brain.</h2><p>Understand every asset. Connect the plant. Correlate what is changing. Learn from verified outcomes. Give decisions an evidence trail. Help people act earlier, safer and smarter.</p><div class="buttons" style="justify-content:center"><a class="btn primary" href="https://anviqo.onrender.com/login">ENTER ANVIQO COMMAND CENTER →</a></div></div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© 2026 ANVIQO AI</span><span>THINK • PREDICT • PROTECT</span><span>V5 FROZEN CORE • READ-ONLY</span></div></footer>
+</body></html>
