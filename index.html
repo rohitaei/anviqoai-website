@@ -11,12 +11,71 @@ nav{position:sticky;top:0;z-index:10;background:#050a12cc;backdrop-filter:blur(1
 section{padding:78px 0}.kicker{color:var(--cyan);font-size:9px;font-weight:900;letter-spacing:2px}h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin:9px 0 12px}.lead{max-width:720px;color:var(--mut)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.card{background:linear-gradient(145deg,#0d1c2d,#08131f);border:1px solid var(--line);border-radius:13px;padding:22px;min-height:175px}.ico{color:var(--cyan);font-size:20px}.card h3{font-size:15px;margin:13px 0 7px}.card p{color:var(--mut);font-size:11px}.identity{display:grid;grid-template-columns:1fr 1fr;gap:18px}.box{background:#091522;border:1px solid var(--line);border-radius:14px;padding:24px}.tag{display:inline-block;background:#10283a;color:var(--cyan);padding:5px 8px;border-radius:5px;font:10px monospace}.tree{margin-top:15px;font:12px/2 ui-monospace,monospace;color:#a9bdca}.tree b{color:var(--cyan)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:30px}.step{background:#0a1625;border:1px solid var(--line);border-radius:10px;padding:17px 9px;text-align:center;color:#aebfcb;font-size:10px}.step b{display:block;color:var(--cyan);font-size:17px;margin-bottom:6px}.safety{margin-top:28px;background:#081a16;border:1px solid #20563f;border-radius:14px;padding:22px}.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.safe{padding:11px;border:1px solid #214b3a;border-radius:7px;color:#8fe4b5;font-size:10px}.vision{background:linear-gradient(135deg,#0a1e2e,#07111c);border:1px solid #24465d;border-radius:18px;padding:48px;text-align:center}.vision p{max-width:720px;margin:auto;color:var(--mut)}footer{border-top:1px solid var(--line);padding:28px 0;color:#698197;font-size:9px}.foot{display:flex;justify-content:space-between}
 @media(max-width:800px){.links{display:none}.dash,.cards,.identity{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.sgrid{grid-template-columns:1fr 1fr}h1{letter-spacing:-2px}}
 @media(max-width:520px){.dash,.cards,.identity,.sgrid,.flow{grid-template-columns:1fr}.hero{padding-top:60px}h1{font-size:48px}.hero p{font-size:15px}.vision{padding:30px 18px}.foot{display:block;line-height:2}}
+
+/* ANVIQO NEXT EVOLUTION — 3D HERO */
+.anviqo-evolution{
+  margin:0 0 18px;
+  perspective:900px;
+  transform-style:preserve-3d;
+}
+.anviqo-evolution .brand3d{
+  display:block;
+  font-size:clamp(52px,9vw,105px);
+  line-height:.82;
+  font-weight:950;
+  letter-spacing:.16em;
+  color:#f7fcff;
+  transform:translateZ(45px);
+  text-shadow:
+    0 2px 0 #a5b1b8,
+    0 4px 0 #6d7981,
+    0 7px 0 #3d4850,
+    0 14px 28px #000c,
+    0 0 35px #35d9ea44;
+}
+.anviqo-evolution .next3d{
+  display:block;
+  margin-top:16px;
+  font-size:clamp(22px,4vw,43px);
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:.22em;
+  background:linear-gradient(180deg,#ffffff 0%,#c8f5ff 35%,#35d9ea 70%,#087b9d 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  transform:translateZ(30px);
+  text-shadow:
+    0 3px 0 #07516a99,
+    0 8px 22px #35d9ea33;
+}
+.anviqo-evolution .evolution-sub{
+  margin-top:12px;
+  color:#9dc2cf;
+  font-size:clamp(12px,1.8vw,18px);
+  letter-spacing:.07em;
+  text-shadow:0 2px 12px #000b;
+}
+.anviqo-evolution .evolution-line{
+  width:150px;
+  height:2px;
+  margin-top:20px;
+  background:linear-gradient(90deg,transparent,#35d9ea,transparent);
+  box-shadow:0 0 18px #35d9ea99;
+}
+
 </style></head>
 <body>
 <nav><div class="wrap nav"><a class="brand" href="#">ANVIQO<small>THINK • PREDICT • PROTECT</small></a><div class="links"><a href="#platform">Platform</a><a href="#intelligence">Intelligence</a><a href="#safety">Safety</a><a href="#vision">Vision</a></div><a class="login" href="https://anviqo.onrender.com/login">LOGIN</a></div></nav>
 <main>
 <section class="hero"><div class="wrap">
 <div class="pill"><i class="dot"></i> INDUSTRIAL INTELLIGENCE • V5 FROZEN CORE</div>
+<div class="anviqo-evolution">
+<span class="brand3d">ANVIQO</span>
+<span class="next3d">NEXT EVOLUTION</span>
+<div class="evolution-sub">The Next Evolution of Industrial Intelligence</div>
+<div class="evolution-line"></div>
+</div>
 <h1>See the plant.<br><span>Understand the risk.</span><br>Decide with evidence.</h1>
 <p>ANVIQO connects equipment, events, evidence and plant context into one intelligent decision-support layer for operations, instrumentation, maintenance and management.</p>
 <div class="buttons"><a class="btn primary" href="#platform">EXPLORE ANVIQO ↓</a><a class="btn secondary" href="https://anviqo.onrender.com/login">OPEN COMMAND CENTER →</a></div>
